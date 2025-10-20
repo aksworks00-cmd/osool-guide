@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osool Guide - NATO Asset Codifier</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="header-content">
+                <div class="header-left">
+                    <h1 class="logo">Osool Guide</h1>
+                    <p class="subtitle">NATO Asset Classification System</p>
+                </div>
+                <div class="language-toggle">
+                    <button id="btnEnglish" class="lang-btn active">English</button>
+                    <button id="btnArabic" class="lang-btn">العربية</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Search Section -->
+        <main>
+            <div class="search-container">
+                <textarea
+                    id="queryInput"
+                    placeholder="Describe your asset... (e.g., desktop computer, M4 carbine, combat boots)"
+                    rows="3"
+                ></textarea>
+                <button id="searchBtn" class="btn-primary">Classify Asset</button>
+            </div>
+
+            <!-- Loading State -->
+            <div id="loadingState" class="loading-state hidden">
+                <div class="spinner"></div>
+                <p>Analyzing asset...</p>
+            </div>
+
+            <!-- Results Section -->
+            <div id="resultsContainer" class="results-container hidden">
+                <div class="result-card">
+                    <h2 class="result-title" id="resultName"></h2>
+
+                    <div class="code-grid">
+                        <div class="code-item">
+                            <span class="code-label">NSG</span>
+                            <span class="code-value" id="nsgValue">--</span>
+                        </div>
+                        <div class="code-item">
+                            <span class="code-label">NSC</span>
+                            <span class="code-value" id="nscValue">--</span>
+                        </div>
+                        <div class="code-item">
+                            <span class="code-label">INC</span>
+                            <span class="code-value" id="incValue">--</span>
+                        </div>
+                    </div>
+
+                    <div class="definition-section">
+                        <h3>Definition</h3>
+                        <p id="definitionText"></p>
+                    </div>
+
+                    <div class="reasoning-section">
+                        <h3>Classification Reasoning</h3>
+                        <p id="reasoningText"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error State -->
+            <div id="errorContainer" class="error-container hidden">
+                <p id="errorText"></p>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>Powered by NATO Asset Codifier • <span id="statusIndicator" class="status-offline">●</span> <span id="statusText">Checking connection...</span></p>
+        </footer>
+    </div>
+
+    <script src="static/js/app.js"></script>
+</body>
+</html>

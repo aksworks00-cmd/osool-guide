@@ -1,0 +1,40 @@
+# NATO Asset Codifier Configuration
+
+ollama:
+  host: "http://100.99.83.98:11434"
+  model: "llama3.3:70b"
+  embedding_model: "nomic-embed-text"
+  timeout: 90
+  temperature: 0.1  # Low temperature for consistent reasoning
+
+embedding:
+  dimension: 768  # nomic-embed-text dimension
+  batch_size: 100  # Process 100 items at a time
+
+retrieval:
+  top_k: 5  # Return top 5 candidates
+  similarity_threshold: 0.6  # Minimum similarity score
+
+pipeline:
+  enable_stage1_cache: false  # Cache query understanding results
+  enable_stage2_cache: false  # Cache RAG results
+  confidence_threshold: 0.75  # Minimum confidence for auto-selection
+
+paths:
+  raw_data: "data/raw"
+  processed_data: "data/processed"
+  embeddings: "embeddings"
+  logs: "logs"
+
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/nato_codifier.log"
+
+# File names (update these with your actual file names)
+data_files:
+  nsg_nsc_inc_mapping: "NATO Groups Classes Names_QNCB.xlsx"
+  inc_database: "Item Name and Definitions_QNCB.xlsx"
+  enriched_database: "enriched_inc_database.csv"
+  faiss_index: "inc_index.faiss"
+  metadata: "metadata.pkl"

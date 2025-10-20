@@ -1,0 +1,27 @@
+# Hugging Face Space Requirements - Static Mode with FastAPI
+# NATO Asset Codifier (Osool Guide)
+
+# Core dependencies
+pandas>=2.0.0
+numpy>=1.24.0
+pyyaml>=6.0
+
+# Machine Learning & Embeddings
+faiss-cpu>=1.7.4
+sentence-transformers>=2.2.0
+torch>=2.0.0
+einops>=0.8.0
+
+# Groq API
+groq>=0.4.0
+diskcache>=5.6.0
+python-dotenv>=1.0.0
+
+# FastAPI server
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.0.0
+httpx>=0.25.0
+
+# Excel support
+openpyxl>=3.1.0
