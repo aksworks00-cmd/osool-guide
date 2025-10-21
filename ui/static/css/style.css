@@ -51,8 +51,21 @@ header {
 }
 
 .header-left {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
     flex: 1;
+}
+
+.header-logo {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+}
+
+.header-text {
+    text-align: left;
 }
 
 .logo {
@@ -354,6 +367,16 @@ footer {
     }
 
     .header-left {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .header-logo {
+        height: 60px;
+    }
+
+    .header-text {
         text-align: center;
     }
 
